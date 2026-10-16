@@ -1,0 +1,31 @@
+                            ANOTAÇÕES FLASK
+
+*  app Flask(__name__) inicia o flask com a var name atribuída a página
+*toda Página sempre terá um ROUTE e uma FUNÇÃO
+
+#ROUTE-> é a rota do seu site (conteudo depois do "/") 
+    EX: site/Login,
+    site/Admin,
+    site/Contatos,
+    site/Catalogo
+
+    *Rotas dinâmicas: Essas rotas recebem uma ou mais variáveis como parâmetro
+            EX: @app.route("/usuarios/<nome_usuario>")
+                def usuarios(nome_usuario):
+                    return render_template("usuarios.html",nome_usuario = nome_usuario)
+    Nesse exemplo a rota recebe como parâmetro o nome de usuário, e passa ele pro HTML
+    dentro do reneder_template
+
+#FUNÇÃO-> É uma function com o que irá aparecer na determinada rota
+
+#Template-> É o código da página (HTML CSS JS) e é obrigatório os códigos estarem na 
+    pasta nomeada como "TEMPLATE"
+
+ *Render_template: importado no inicio junto ao flask e serve para renderizar os arquivos 
+    do que irá aparecer na página (HTML,CSS,JS)   
+
+*app run(debug=true) quando o debug ta true as alterações do site aparecem sem reiniciar
+*port: muda a porta padrão EX: run app(port = 999) 
+
+*[if__name__ =__main__] faz com que o app rode apenas se ele for iniciado diretamente, 
+se for importado ele não irá rodar automaticamente
