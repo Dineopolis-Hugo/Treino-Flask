@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo</title>
+</head>
+<body>
+    <p>Modelo</p>  
+    {#comentário jinga2#}
+
+    <p>{{5+5}}</p>
+  <!-- imprimindo objetos-->
+
+  <p>{{x + y}} usando variáveis</p>
+  <!--imprimindo passando variáveis-->
+
+  <!--Declarações-->
+  <!--Sempre estará entre chaves e porcentagem e sempre terá um "end"-->
+  <!-- endif/endfor -->
+  {% if x >=50 %}
+  <p>IF</p>
+  {% else %}
+  <p>ELSE</p>
+
+{% endif %}
+
+
+<table>
+    {% for k, v in query.items() %}
+    <!--pra cada key (K) e Value (V) na query coloca um [K] no TH e um [V] no TD -->
+    <tr>
+        <th>{{k}}</th>
+        <td>{{v}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
